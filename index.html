@@ -16,6 +16,9 @@
     <script type="text/javascript" src="https://cdn.rawgit.com/ardhi/Leaflet.MousePosition/master/src/L.Control.MousePosition.js"></script>
     <link rel="stylesheet" href="https://cdn.rawgit.com/ardhi/Leaflet.MousePosition/master/src/L.Control.MousePosition.css"/>	  
   </head>
+	
+<!-- Referencia al complemento Leaflet-providers -->	 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.1.7/leaflet-providers.js"></script>	
 
   <body>
     <h1>Costa Rica, Población Total por cantón, 2017</h1>
@@ -37,6 +40,18 @@
     	accessToken: 'pk.eyJ1IjoibXZhcmdhcyIsImEiOiJRc3ZyTmZzIn0.npefgTinHjwxhTt8fjzeIw'
       });    
       osm.addTo(mapa);
+	    
+      // Capa de tipo L.tileLayer definida con el complemento Leaflet-providers
+      var sta = L.tileLayer.provider('Stamen.Watercolor');
+      sta.addTo(mapa);
+      
+      // Capa de tipo L.tileLayer definida con el complemento Leaflet-providers
+      var topo = L.tileLayer.provider('OpenTopoMap');
+      topo.addTo(mapa);      
+      
+       // Capa de tipo L.tileLayer definida con el complemento Leaflet-providers
+      var bike = L.tileLayer.provider('HikeBike.HikeBike');
+      bike.addTo(mapa);  
 	  
 	  // retorna un color con base en la cantidad de especies
    	  function color(d) {
@@ -82,6 +97,9 @@
       var baseLayers = {
 	"OpenStreetMap": osm,
 	"MapBox" : mbox
+	"Stamen Watercolor" : sta,
+	"OpenTopoMap" : topo  
+	"HikeBike.HikeBike": bike
       };
       var overlays = {
 	"Poblacion 2011": Poblacion,
