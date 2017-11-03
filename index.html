@@ -57,6 +57,11 @@
       var terrain = L.tileLayer.provider('Esri.WorldTerrain');
       terrain.addTo(mapa);
 	    
+      var wmsLayer = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
+    layers: 'Límite Provincial 1:5mil'
+       });
+      wmsLayer.addTo(map);
+	    
 	  // retorna un color con base en la cantidad de especies
    	  function color(d) {
 	return d > 200000 ? '#253494' :
@@ -104,6 +109,7 @@
 	"OpenTopoMap": topo,
 	"OSM BlackAndWhite": osmblackWhite,
 	"EsriWorldTerrain": terrain
+	
       };
       var overlays = {
 	"Poblacion 2011": Poblacion
