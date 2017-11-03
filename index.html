@@ -108,18 +108,15 @@
 	"MapBox" : mbox,
 	"OpenTopoMap": topo,
 	"OSM BlackAndWhite": osmblackWhite,
-	"EsriWorldTerrain": terrain
-	
+	"EsriWorldTerrain": terrain,
+	"Limite provincial": wmsLayer
 	
       };
       var overlays = {
 	"Poblacion 2011": Poblacion,
 		      
        };
-      var wms = {
-        "Limite provincial": wmsLayer
-		
-      };
+     
       L.control.layers(baseLayers, overlays, wms).addTo(mapa);
 	    
       L.control.mousePosition().addTo(mapa);
