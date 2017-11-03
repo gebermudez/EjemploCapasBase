@@ -47,7 +47,13 @@
 	attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
          });
       topo.addTo(mapa);
-	  
+	    
+      var osmblackWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+	maxZoom: 18,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        });
+      osmblackWhite.addTo(mapa); 
+	    
 	  // retorna un color con base en la cantidad de especies
    	  function color(d) {
 	return d > 200000 ? '#253494' :
@@ -92,8 +98,8 @@
       var baseLayers = {
 	"OpenStreetMap": osm,
 	"MapBox" : mbox,
-	" OpenTopoMap": topo
-	
+	"OpenTopoMap": topo
+	"OpenStreetMap.BlackAndWhite": osmblackWhite
       };
       var overlays = {
 	"Poblacion 2011": Poblacion
