@@ -58,7 +58,7 @@
       terrain.addTo(mapa);
 	    
       var wmsLayer = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
-    layers: 'IGN_5:Hidrografia 5k'
+         layers: 'IGN_5:Hidrografia 5k'
        });
       wmsLayer.addTo(mapa);
 	    
@@ -109,11 +109,12 @@
 	"OpenTopoMap": topo,
 	"OSM BlackAndWhite": osmblackWhite,
 	"EsriWorldTerrain": terrain,
-	"Limite provincial": wmsLayer
+	
 	
       };
       var overlays = {
 	"Poblacion 2011": Poblacion
+	"Limite provincial": wmsLayer
 		
       };
       L.control.layers(baseLayers, overlays).addTo(mapa);
