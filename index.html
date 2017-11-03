@@ -110,14 +110,12 @@
 	"OSM BlackAndWhite": osmblackWhite,
 	"EsriWorldTerrain": terrain,
 	"Limite provincial": wmsLayer
-	
       };
       var overlays = {
-	"Poblacion 2011": Poblacion
-		      
-       };
+	"Poblacion 2011": Poblacion 
+      };
      
-      L.control.layers(baseLayers, overlays, wms).addTo(mapa);
+      L.control.layers(baseLayers, overlays).addTo(mapa);
 	    
       L.control.mousePosition().addTo(mapa);
     </script>
