@@ -87,7 +87,7 @@
 	layer.bindPopup(popupContent);
       }	    	    
 	    
-      var Poblacion = L.geoJson(cantones, {
+      var Poblacion = L.geoJson(cantones,  {
         style: function (feature) {
 	  return {
 	    weight: 2,
@@ -114,10 +114,13 @@
       };
       var overlays = {
 	"Poblacion 2011": Poblacion,
-	"Limite provincial": wmsLayer
+		      
+       };
+      var wms = {
+        "Limite provincial": wmsLayer
 		
       };
-      L.control.layers(baseLayers, overlays).addTo(mapa);
+      L.control.layers(baseLayers, overlays, wms).addTo(mapa);
 	    
       L.control.mousePosition().addTo(mapa);
     </script>
