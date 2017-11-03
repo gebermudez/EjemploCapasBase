@@ -50,8 +50,8 @@
       topo.addTo(mapa);      
       
        // Capa de tipo L.tileLayer definida con el complemento Leaflet-providers
-      var bike = L.tileLayer.provider('HikeBike.HikeBike');
-      bike.addTo(mapa);  
+      //var bike = L.tileLayer.provider('HikeBike.HikeBike');
+      //bike.addTo(mapa);  
 	  
 	  // retorna un color con base en la cantidad de especies
    	  function color(d) {
@@ -99,7 +99,7 @@
 	"MapBox" : mbox
 	"Stamen Watercolor" : sta,
 	"OpenTopoMap" : topo  
-	"HikeBike.HikeBike": bike
+	//"HikeBike.HikeBike": bike
       };
       var overlays = {
 	"Poblacion 2011": Poblacion,
